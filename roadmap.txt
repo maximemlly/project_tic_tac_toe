@@ -5,3 +5,8 @@ création des différents fichier ()
 Créer un menu de jeu
 créer un conteur de points
 --> ordinateur et utilisateur 
+Entrer le nom avant de commencer la partie
+
+
+CHRONOLOGIE D'UNE PARTIE 
+
