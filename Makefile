@@ -3,7 +3,7 @@
 NAME = tic_tac_toe
 
 SRCS = main.c \
-	tic_tac_toe.c
+	tic_tac_toe.c \
 
 all: $(NAME)
 
