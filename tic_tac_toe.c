@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void print_grid(char used, char *grid)
+void print_grid(char usedPlayer, char *grid)
 {
     
     int case1 = grid[0];
@@ -14,7 +14,8 @@ void print_grid(char used, char *grid)
     int case8 = grid[7];
     int case9 = grid[8];
 
-    if(used == 1)
+    // Joueur
+    if(usedPlayer == 1)
     {
         if(case1 == ' ')
         {
@@ -27,7 +28,7 @@ void print_grid(char used, char *grid)
         }
     }
     
-    else if(used == 2)
+    else if(usedPlayer == 2)
     {
         if(case2 == ' ')
         {
@@ -38,7 +39,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 3)
+    else if(usedPlayer == 3)
     {
         if(case3 == ' ')
         {
@@ -49,7 +50,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 4)
+    else if(usedPlayer == 4)
     {
         if(case4 == ' ')
         {
@@ -60,7 +61,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 5)
+    else if(usedPlayer == 5)
     {
         if(case5 == ' ')
         {
@@ -71,7 +72,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 6)
+    else if(usedPlayer == 6)
     {
         if(case6 == ' ')
         {
@@ -82,7 +83,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 7)
+    else if(usedPlayer == 7)
     {
         if(case7 == ' ')
         {
@@ -93,7 +94,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 8)
+    else if(usedPlayer == 8)
     {
         if(case8 == ' ')
         {
@@ -104,7 +105,7 @@ void print_grid(char used, char *grid)
             printf("Cette case est déjà utilisée !\n");
         }
     }
-    else if(used == 9)
+    else if(usedPlayer == 9)
     {
         if(case9 == ' ')
         {
@@ -142,6 +143,7 @@ int game(int numero) // Numéro = variable d'entrée de l'utilisateur (la case c
         grid[choice - 1] = 'O';
         print_grid(choice, grid);
 
+        // Conditions de victoire pour le joueur
         if(grid[0] == 'O' && grid[1] == 'O' && grid[2] == 'O')
         {
             printf("Gagné !\n");
@@ -167,7 +169,32 @@ int game(int numero) // Numéro = variable d'entrée de l'utilisateur (la case c
             printf("Gagné !\n");
             win = 1;
         }
-        // printf("%s", grid);
+        // Conditions de victoire pour le robot
+        if(grid[0] == 'X' && grid[1] == 'X' && grid[2] == 'O')
+        {
+            printf("Perdu !\n");
+            loose = 1;
+        }
+        else if(grid[3] == 'X' && grid[4] == 'X' && grid[5] == 'X')
+        {
+            printf("Perdu !\n");
+            loose = 1;
+        }
+        else if(grid[6] == 'X' && grid[7] == 'X' && grid[8] == 'X')
+        {
+            printf("Perdu !\n");
+            loose = 1;
+        }
+        else if(grid[0] == 'X' && grid[4] == 'X' && grid[8] == 'X')
+        {
+            printf("Perdu !\n");
+            loose = 1;
+        }
+        else if(grid[2] == 'X' && grid[4] == 'X' && grid[6] == 'X')
+        {
+            printf("Perdu !\n");
+            loose = 1;
+        }
     }
     return(numero); 
 }
